@@ -16,10 +16,9 @@ public class DemoGatewayApplication {
 	@Bean
 	public RouteLocator customerRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
-				//.route("client", r -> r.path("/").uri("http://localhost:8082"))
-				.route("client_send_message", r -> r.path("/sendMessage").uri("http://localhost:8082/sendMessage"))
-				.route("payment", r -> r.path("/api/commands").uri("http://localhost:8081"))
-				.route("payment_test", r -> r.path("/test").uri("http://localhost:8081/api/commands"))
+				.route("auth-service", r -> r.path("/auth/**").uri("http://localhost:8089"))
+				.route("client-service", r -> r.path("/client/**").uri("http://localhost:8082"))
+				.route("payment-payment", r -> r.path("/payment/**").uri("http://localhost:8081"))
 				.build();
 	}
 

@@ -21,7 +21,7 @@ public class ClientController {
     @Autowired
     private CommandServiceProxy commandServiceProxy;
 
-    @GetMapping
+    @GetMapping("api/commands")
     public String home(Model model) {
         List<Command> commands = commandServiceProxy.findCommands();
         log.info("Command size {}", commands.size());

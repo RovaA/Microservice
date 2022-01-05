@@ -14,7 +14,6 @@ import java.util.Base64;
 
 @Slf4j
 @RestController
-@RequestMapping("/auth")
 public class AuthenticationController {
 
     @Autowired
@@ -23,14 +22,14 @@ public class AuthenticationController {
     @Autowired
     private JwtService jwtService;
 
-    @PostMapping
+    @PostMapping("/login")
     public String authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         return jwtService.createToken(request.getUsername());
     }
 
     /* Testing purpose only */
-    @GetMapping
+    @GetMapping("/login")
     public String authenticateWithGet(@RequestParam String username, @RequestParam String password) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
