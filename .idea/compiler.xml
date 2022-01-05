@@ -11,9 +11,11 @@
         <module name="demo-client" />
         <module name="demo-server" />
         <module name="demo-payment" />
+        <module name="demo-authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo-authentication" target="1.8" />
       <module name="demo-client" target="1.8" />
       <module name="demo-gateway" target="1.8" />
       <module name="demo-payment" target="1.8" />
@@ -22,6 +24,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo-authentication" options="-parameters" />
       <module name="demo-client" options="-parameters" />
       <module name="demo-gateway" options="-parameters" />
       <module name="demo-payment" options="-parameters" />
