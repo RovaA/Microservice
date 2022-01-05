@@ -11,7 +11,6 @@
         <module name="demo-client" />
         <module name="demo-server" />
         <module name="demo-payment" />
-        <module name="demo-authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -20,6 +19,7 @@
       <module name="demo-gateway" target="1.8" />
       <module name="demo-payment" target="1.8" />
       <module name="demo-server" target="1.8" />
+      <module name="Microservice" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

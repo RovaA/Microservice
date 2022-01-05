@@ -10,7 +10,7 @@
         <option value="$PROJECT_DIR$/demo-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/demo-payment/pom.xml" />
         <option value="$PROJECT_DIR$/demo-server/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
