@@ -11,6 +11,7 @@
         <module name="demo-client" />
         <module name="demo-server" />
         <module name="demo-payment" />
+        <module name="demo-authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
