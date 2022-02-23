@@ -10,10 +10,10 @@ import java.util.List;
 @FeignClient("demo-payment")
 public interface CommandServiceProxy {
 
-    @GetMapping("/api/commands")
+    @GetMapping("/payment/api/commands")
     List<Command> findCommands();
 
-    @PostMapping("/api/commands")
+    @PostMapping("/payment/api/commands")
     void saveCommands(List<? extends Command> commands);
 
 }

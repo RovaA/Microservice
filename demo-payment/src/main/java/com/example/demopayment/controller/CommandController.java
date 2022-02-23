@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +18,7 @@ import java.util.List;
 @RestController
 public class CommandController {
 
+    @Cacheable(value = "commands")
     @GetMapping("/api/commands")
     public List<Command> findCommands() {
         ArrayList<Command> commands = new ArrayList<>();
@@ -25,6 +28,7 @@ public class CommandController {
         return commands;
     }
 
+    @CacheEvict(value = "commands")
     @PostMapping("/api/commands")
     public Command sendCommands() {
         return new Command();
